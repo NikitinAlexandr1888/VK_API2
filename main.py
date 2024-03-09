@@ -1,11 +1,5 @@
-from urllib.parse import urlencode
-from time import sleep
 import requests
-import json
-import vk_api
-import posixpath
-import os
-import yadisk
+
 
 
 ID_VK = input("ID_VK: ")
@@ -63,6 +57,7 @@ class YADISK:
         "templated": True
         }
 
+    def get_used_space(self):
         return self.get_disk_info().get('bytes_used')
     def download_file(self, path):
         file = open(path, 'rb')
